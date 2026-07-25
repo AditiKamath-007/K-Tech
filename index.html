@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Helion Solar — Own the Sun</title>
+<meta name="description" content="Helion Solar designs smart solar systems that erase your electricity bill for years. Get an instant quote and go solar today.">
+
+<!-- ==========================================================
+     THEME — set the saved theme (or default 'dark') before paint
+     so there's no flash of the wrong theme. Edit the fallback
+     'dark' below if you want the site to default to light mode.
+     ========================================================== -->
+<script>
+  (function () {
+    var saved = localStorage.getItem("helion-theme");
+    document.documentElement.setAttribute("data-theme", saved || "dark");
+  })();
+</script>
+
+<!-- ==========================================================
+     FONTS
+     Space Grotesk  -> display/headline typeface (geometric, technical)
+     Inter           -> body copy
+     JetBrains Mono  -> data/stat/utility typeface (facts counter, prices)
+     ========================================================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<!-- Icon set -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ==========================================================
+     PRE-LOADER (optional, cosmetic — remove <div id="preloader"> block
+     freely if you don't want it)
+     ========================================================== -->
+<div id="preloader"><div class="sun-loader"></div></div>
+
+<!-- ==========================================================
+     NAVIGATION — sticky + shrinks on scroll, dropdown on Products
+     ========================================================== -->
+<header class="site-header" id="siteHeader">
+  <nav class="navbar container">
+    <a href="#home" class="brand">
+      <span class="brand-mark"><i class="fa-solid fa-bolt"></i></span>
+      Helion<span class="brand-accent">Solar</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+
+      <li class="has-dropdown">
+        <a href="#products">Products <i class="fa-solid fa-chevron-down dd-caret"></i></a>
+        <ul class="dropdown">
+          <li><a href="#products" data-filter-link="wind-solar">Wind Solar</a></li>
+          <li><a href="#products" data-filter-link="solar-pv">Solar PV</a></li>
+          <li><a href="#products" data-filter-link="solar-heating">Solar Heating</a></li>
+          <li><a href="#products" data-filter-link="heat-pump">Air Source Heat Pump</a></li>
+          <li><a href="#products" data-filter-link="all">View All</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#gallery">Projects</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#location">Locations</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="#contact" class="btn btn-ghost">Enquire</a>
+      <a href="#products" class="btn btn-solid">Get an Instant Quote</a>
+    </div>
+
+    <div class="nav-utility">
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode">
+        <i class="fa-solid fa-sun"></i>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- ==========================================================
+     HERO — carousel + animated sky (sun/clouds) + "Explore Our
+     Systems" showcase widget. Fully theme-aware: the sky gradient,
+     text and card all switch between the light and dark palettes.
+     ========================================================== -->
+<section class="hero" id="home">
+  <div class="hero-carousel" id="heroCarousel">
+    <div class="hero-slide is-active" data-slide="0">
+      <div class="hero-bg hero-bg--1"></div>
+    </div>
+    <div class="hero-slide" data-slide="1">
+      <div class="hero-bg hero-bg--2"></div>
+    </div>
+    <div class="hero-slide" data-slide="2">
+      <div class="hero-bg hero-bg--3"></div>
+    </div>
+  </div>
+
+  <!-- Animated weather layer: a slowly drifting, pulsing sun and
+       soft clouds. Purely decorative CSS animation (see style.css). -->
+  <div class="hero-sky" aria-hidden="true">
+    <div class="hero-sun"></div>
+    <div class="hero-cloud hero-cloud--1"></div>
+    <div class="hero-cloud hero-cloud--2"></div>
+    <div class="hero-cloud hero-cloud--3"></div>
+  </div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-content">
+    <div class="hero-text">
+      <span class="eyebrow"><i class="fa-solid fa-circle-dot"></i> Smart Solar, Engineered for Zero Bills</span>
+      <h1 class="hero-slide-copy is-active" data-copy="0">
+        ₹0 Electricity Bills<br>for the Next <span class="text-glow">7 Years</span>
+      </h1>
+      <h1 class="hero-slide-copy" data-copy="1">
+        Turn Your Roof<br>Into a <span class="text-glow">Power Plant</span>
+      </h1>
+      <h1 class="hero-slide-copy" data-copy="2">
+        Store the Sun.<br>Use It <span class="text-glow">Whenever</span>.
+      </h1>
+      <p class="hero-sub">Solar, wind, water heating and heat pumps — engineered together so generation never fully stops, whatever the weather is doing outside.</p>
+
+      <div class="hero-cta-row">
+        <a href="#products" class="btn btn-solid btn-lg">Get an Instant Quote <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#how-it-works" class="btn btn-outline btn-lg">See How It Works</a>
+      </div>
+
+      <div class="carousel-dots" id="carouselDots">
+        <button class="dot is-active" data-dot="0" aria-label="Slide 1"></button>
+        <button class="dot" data-dot="1" aria-label="Slide 2"></button>
+        <button class="dot" data-dot="2" aria-label="Slide 3"></button>
+      </div>
+    </div>
+
+    <!-- Signature element: "Explore Our Systems" showcase card.
+         Cycles through the 4 product categories with a large photo,
+         small clickable thumbnails and crossfade transitions. -->
+    <div class="showcase-widget" id="showcaseWidget">
+      <div class="showcase-main">
+        <img id="showcaseMainImg" src="" alt="" class="showcase-main__img">
+        <div class="showcase-main__scrim"></div>
+        <button class="showcase-main__arrow showcase-main__arrow--prev" id="showcasePrev" aria-label="Previous system">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="showcase-main__arrow showcase-main__arrow--next" id="showcaseNext" aria-label="Next system">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <div class="showcase-main__overlay">
+          <span class="showcase-main__eyebrow" id="showcaseLabel">Solar PV</span>
+          <h3 id="showcaseHeading">Rooftop Solar</h3>
+          <p id="showcaseBlurb">Grid-tied panels sized to your roof.</p>
+          <a href="#products" class="showcase-main__cta" id="showcaseCta">Discover <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="showcase-thumbs" id="showcaseThumbs"><!-- injected by script.js from SHOWCASE --></div>
+    </div>
+  </div>
+
+  <a href="#facts" class="scroll-cue" aria-label="Scroll down"><i class="fa-solid fa-chevron-down"></i></a>
+</section>
+
+<!-- ==========================================================
+     FACTS COUNTER
+     ========================================================== -->
+<section class="facts" id="facts">
+  <div class="container facts-grid">
+    <div class="fact">
+      <span class="fact-number" data-target="14200" data-suffix="+">0</span>
+      <span class="fact-label">Homes Powered</span>
+    </div>
+    <div class="fact">
+      <span class="fact-number" data-target="98" data-suffix="%">0</span>
+      <span class="fact-label">Customer Satisfaction</span>
+    </div>
+    <div class="fact">
+      <span class="fact-number" data-target="61300" data-suffix=" t">0</span>
+      <span class="fact-label">CO₂ Offset / Year</span>
+    </div>
+    <div class="fact">
+      <span class="fact-number" data-target="25" data-suffix="-yr">0</span>
+      <span class="fact-label">Panel Warranty</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     PRODUCTS — highest priority section
+     ========================================================== -->
+<section class="products" id="products">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><i class="fa-solid fa-layer-group"></i> Systems &amp; Hardware</span>
+      <h2>Pick the system that fits your site</h2>
+      <p class="section-sub">Solar, wind, water heating and heat pumps — every package includes hardware, a monitoring app and installation. Open a product to see full specs, or enquire directly for financing options.</p>
+    </div>
+
+    <div class="product-filters" id="productFilters">
+      <button class="filter-chip is-active" data-filter="all">All</button>
+      <button class="filter-chip" data-filter="wind-solar">Wind Solar</button>
+      <button class="filter-chip" data-filter="solar-pv">Solar PV</button>
+      <button class="filter-chip" data-filter="solar-heating">Solar Heating</button>
+      <button class="filter-chip" data-filter="heat-pump">Air Source Heat Pump</button>
+    </div>
+
+    <div class="product-grid" id="productGrid">
+      <!-- Product cards are injected by js/script.js from the PRODUCTS array
+           so you can edit price/specs/images in one place. See script.js -->
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     HOW IT WORKS
+     ========================================================== -->
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><i class="fa-solid fa-diagram-project"></i> Process</span>
+      <h2>From roof scan to ₹0 bill in four steps</h2>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <span class="step-index">01</span>
+        <i class="fa-solid fa-satellite-dish step-icon"></i>
+        <h3>Instant Roof Scan</h3>
+        <p>Enter your address — our satellite model estimates sun exposure and system size in under a minute.</p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-index">02</span>
+        <i class="fa-solid fa-file-invoice-dollar step-icon"></i>
+        <h3>Transparent Quote</h3>
+        <p>See hardware, install cost, incentives and 7-year savings side by side. No hidden line items.</p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-index">03</span>
+        <i class="fa-solid fa-helmet-safety step-icon"></i>
+        <h3>Certified Install</h3>
+        <p>Local, licensed crews mount your system, usually within 2–3 weeks of signing.</p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-index">04</span>
+        <i class="fa-solid fa-chart-line step-icon"></i>
+        <h3>Monitor &amp; Save</h3>
+        <p>Track generation, storage and savings live from the Helion app, day and night.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     PROJECT GALLERY
+     ========================================================== -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><i class="fa-solid fa-images"></i> Recent Installs</span>
+      <h2>Real roofs, real systems</h2>
+    </div>
+  </div>
+
+  <div class="gallery-grid container" id="galleryGrid">
+    <!-- injected by script.js from GALLERY array -->
+  </div>
+</section>
+
+<!-- ==========================================================
+     TESTIMONIALS CAROUSEL
+     ========================================================== -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><i class="fa-solid fa-quote-left"></i> Customers</span>
+      <h2>Homeowners who stopped paying for power</h2>
+    </div>
+
+    <!-- Auto-scrolls continuously (js/script.js). Hover or focus to pause and read. -->
+    <div class="testimonial-carousel" id="testimonialCarousel">
+      <div class="tc-track-wrap" id="tcTrackWrap">
+        <div class="tc-track" id="tcTrack">
+          <!-- injected by script.js from TESTIMONIALS array, duplicated for a seamless loop -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     LOCATION / MAP
+     ========================================================== -->
+<section class="location" id="location">
+  <div class="container location-grid">
+    <div class="location-info">
+      <span class="eyebrow"><i class="fa-solid fa-location-dot"></i> Visit or Call Us</span>
+      <h2>Our flagship showroom</h2>
+      <p class="section-sub">Walk in to see live panel, inverter and battery hardware, or book an on-site survey with a certified engineer.</p>
+      <ul class="location-list">
+        <li><i class="fa-solid fa-map-pin"></i> 4th Block, Koramangala, Bengaluru, Karnataka 560034</li>
+        <li><i class="fa-solid fa-phone"></i> +91 80 4567 1234</li>
+        <li><i class="fa-solid fa-envelope"></i> hello@helionsolar.example</li>
+        <li><i class="fa-solid fa-clock"></i> Mon–Sat, 9:00 AM – 7:00 PM</li>
+      </ul>
+    </div>
+
+    <div class="map-embed">
+      <!-- Replace the src below with your real business address embed from Google Maps
+           (Share > Embed a map) once you have one. -->
+      <iframe
+        title="Helion Solar showroom location"
+        src="https://www.google.com/maps?q=Koramangala,Bengaluru&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     ENQUIRY FORM + CONTACT / SOCIALS
+     ========================================================== -->
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-form-wrap">
+      <span class="eyebrow"><i class="fa-solid fa-comment-dots"></i> Get an Instant Quote</span>
+      <h2>Tell us about your roof</h2>
+      <p class="section-sub">Fill this in and it opens WhatsApp with your details ready to send straight to our team — no account or app sign-in needed on your end.</p>
+
+      <form id="enquiryForm" class="enquiry-form" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="fullName">Full name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email address" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+          </div>
+          <div class="form-field">
+            <label for="pincode">Pincode / ZIP</label>
+            <input type="text" id="pincode" name="pincode" placeholder="Your area pincode" required>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="interest">I'm interested in</label>
+          <select id="interest" name="interest">
+            <option value="wind-solar">Wind Solar</option>
+            <option value="solar-pv">Solar PV</option>
+            <option value="solar-heating">Solar Heating</option>
+            <option value="heat-pump">Air Source Heat Pump</option>
+            <option value="other">Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell us about your roof, average bill, or timeline..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-solid btn-lg btn-block">
+          <i class="fa-solid fa-paper-plane"></i> Send Enquiry
+        </button>
+
+        <p class="form-status" id="formStatus" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <div class="contact-side">
+      <div class="contact-card">
+        <h3>Talk to a human</h3>
+        <ul class="contact-detail-list">
+          <li><i class="fa-solid fa-phone"></i> +91 80 4567 1234</li>
+          <li><i class="fa-solid fa-envelope"></i> hello@helionsolar.example</li>
+          <li><i class="fa-solid fa-location-dot"></i> Bengaluru · Karnataka · India</li>
+        </ul>
+      </div>
+
+      <div class="contact-card">
+        <h3>Follow Helion Solar</h3>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+      </div>
+
+      <div class="contact-card contact-card--dark">
+        <h3><i class="fa-solid fa-shield-halved"></i> 25-Year Panel Warranty</h3>
+        <p>Every Helion system ships with a 25-year performance warranty and a 7-year ₹0-bill guarantee, backed by our Smart Controller SLA.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ==========================================================
+     TOAST (used for enquiry form confirmations)
+     ========================================================== -->
+<div class="toast" id="toast"></div>
+
+<!-- ==========================================================
+     FOOTER
+     ========================================================== -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#home" class="brand">
+        <span class="brand-mark"><i class="fa-solid fa-bolt"></i></span>
+        Helion<span class="brand-accent">Solar</span>
+      </a>
+      <p>Engineering ₹0 electricity bills, one roof at a time.</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#gallery">Projects</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Careers</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Products</h4>
+      <a href="#products">Wind Solar</a>
+      <a href="#products">Solar PV</a>
+      <a href="#products">Solar Heating</a>
+      <a href="#products">Air Source Heat Pump</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="#contact">Contact Us</a>
+      <a href="#location">Showroom</a>
+      <a href="#">Warranty</a>
+      <a href="#">FAQs</a>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>&copy; <span id="year"></span> Helion Solar. All rights reserved. Built as a frontend demo.</p>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="backToTop" class="back-to-top" aria-label="Back to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
