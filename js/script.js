@@ -23,7 +23,7 @@
    no + sign, no spaces or dashes) to receive enquiries directly.
    See the chat notes for full WhatsApp setup instructions.
    ------------------------------------------------------------- */
-const OWNER_WHATSAPP_NUMBER = "919000000000"; // <-- EDIT ME: 91 + 10-digit number
+const OWNER_WHATSAPP_NUMBER = "918971874508";
 
 document.addEventListener("DOMContentLoaded", () => {
   initHeroCarousel();
@@ -360,7 +360,7 @@ function initEnquiryForm() {
     };
 
     const lines = [
-      "*New enquiry — Helion Solar*",
+      "*New enquiry — K-Tech Solar*",
       `Name: ${data.name}`,
       `Email: ${data.email}`,
       `Phone: ${data.phone}`,

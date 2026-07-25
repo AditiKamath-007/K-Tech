@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function renderProduct(product) {
-  document.title = `${product.name} — Helion Solar`;
+  document.title = `${product.name} — K-Tech Solar`;
   document.getElementById("breadcrumbCurrent").textContent = product.name;
   document.getElementById("pdTag").textContent = product.tag;
   document.getElementById("pdName").textContent = product.name;

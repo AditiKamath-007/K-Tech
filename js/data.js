@@ -108,7 +108,7 @@ const PRODUCTS = [
     tag: "Solar PV · Rooftop",
     name: "Rooftop Solar System",
     desc: "Our most-installed setup — grid-tied rooftop panels for 3–4 BHK homes, sized to cover the bulk of daytime usage.",
-    longDesc: "The Rooftop system is our most-installed setup, sized for a typical 3–4 BHK home with average daytime usage. It ships as a complete kit — panels, mounting rails, grid-tied inverter and cabling — and is installed by a certified Helion crew, usually within two to three weeks of signing.",
+    longDesc: "The Rooftop system is our most-installed setup, sized for a typical 3–4 BHK home with average daytime usage. It ships as a complete kit — panels, mounting rails, grid-tied inverter and cabling — and is installed by a certified K-Tech crew, usually within two to three weeks of signing.",
     specs: ["6 kW", "16 Panels", "Grid-Tied Inverter", "25-yr Warranty"],
     highlights: ["Covers ~90% of an average urban household's load", "Full return on investment in 4–5 years", "Includes 1 year of free maintenance visits", "App-based real-time generation monitoring"],
     price: 359000,
@@ -245,12 +245,12 @@ const SHOWCASE = [
 ];
 
 const GALLERY = [
-  { image: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=900&q=80", caption: "Whitefield, Bengaluru — Rooftop Solar", big: true },
-  { image: "https://images.unsplash.com/photo-1592833167665-ebf9d00cb320?auto=format&fit=crop&w=700&q=80", caption: "Indiranagar — Hybrid Solar + Battery" },
-  { image: "https://images.unsplash.com/photo-1548337138-e87d889cc369?auto=format&fit=crop&w=700&q=80", caption: "Nandi Hills — Wind + Solar Hybrid" },
-  { image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=700&q=80", caption: "Peenya Industrial — Ground-Mounted Plant" },
-  { image: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=700&q=80", caption: "Electronic City — Off-Grid Solar" },
-  { image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=700&q=80", caption: "Jayanagar — Solar Water Heater" }
+  { image: "1.png", caption: "800kW RoofTop System - Shivshakti Sugars, Raibag", big: true },
+  { image: "2.png", caption: "800kW RoofTop System - Shivshakti Sugars, Raibag" },
+  { image: "3.png", caption: "135kW RoofTop Solar - Attar Steel Structures Pvt.ltd" },
+  { image: "4.png", caption: "135kW RoofTop Solar - Attar Steel Structures Pvt.ltd" },
+  { image: "5.png", caption: "20kW RoofTop Solar - Sairaj Lawns " },
+  { image: "6.png", caption: "10kW RoofTop Solar - Mayakkadevi Petroleum" }
 ];
 
 /* Testimonials are shown anonymized by role/area only, per site policy. */

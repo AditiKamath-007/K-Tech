@@ -45,7 +45,7 @@ function initThemeToggle() {
     const current = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
     const next = current === "light" ? "dark" : "light";
     document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem("helion-theme", next);
+    localStorage.setItem("ktech-theme", next);
     reflectIcon();
   });
 }
